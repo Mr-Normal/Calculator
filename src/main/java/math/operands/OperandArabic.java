@@ -5,8 +5,6 @@ import java.text.ParseException;
 public class OperandArabic extends AbstractOperand {
     private int number;
 
-    public OperandArabic(){
-    }
     public OperandArabic(String parsableString) throws ParseException {
         super(parsableString);
     }
@@ -26,7 +24,7 @@ public class OperandArabic extends AbstractOperand {
                 return true;
             }
             return number.equals("0");
-        }catch (Exception e){
+        } catch (Exception e) {
             return false;
         }
     }
@@ -35,7 +33,7 @@ public class OperandArabic extends AbstractOperand {
     public void setString(String number) {
         if (!isParsable(number)) {
             this.number = 0;
-        }else {
+        } else {
             this.number = Integer.parseInt(number);
         }
     }

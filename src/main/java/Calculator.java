@@ -1,5 +1,4 @@
 import exceptions.DifferentTypeOfReckoningException;
-import exceptions.FoundIllegalRomanNumeralsException;
 import exceptions.InvalidOperationFormatException;
 import math.ICalculator;
 import math.IOperand;
@@ -14,15 +13,13 @@ public class Calculator implements ICalculator {
     @Override
     public String calc(String input) throws
             DifferentTypeOfReckoningException,
-            FoundIllegalRomanNumeralsException,
-            InvalidOperationFormatException{
+            InvalidOperationFormatException {
         return calcPure(input.replaceAll(" ", ""));
     }
 
     private String calcPure(String formulaPure) throws
             DifferentTypeOfReckoningException,
-            FoundIllegalRomanNumeralsException,
-            InvalidOperationFormatException{
+            InvalidOperationFormatException {
         ArrayList<IOperand> operands = mathFactory.getOperands(formulaPure);
         if (operands.size() != 2) {
             throw new InvalidOperationFormatException();

@@ -20,12 +20,14 @@ class OperandRomanTest {
 
     @Test
     void testToString() {
-        OperandRoman operandRoman = new OperandRoman();
-            operandRoman.setInt(40);
-            System.out.println(operandRoman);
-        for (int i = 1; i < 449; i++){
-            operandRoman.setInt(i);
-            System.out.println(operandRoman);
+        try {
+            OperandRoman operandRoman = new OperandRoman();
+            for (int i = 1; i < 449; i++){
+                operandRoman.setInt(i);
+                assertNotNull(operandRoman.toString());
+            }
+        }catch (Exception e){
+            fail();
         }
     }
 }

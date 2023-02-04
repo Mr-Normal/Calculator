@@ -15,8 +15,7 @@ public interface IOperand {
 
     enum Type {
         ARABIC,
-        ROMAN,
-        UNKNOWN
+        ROMAN
     }
 
 }

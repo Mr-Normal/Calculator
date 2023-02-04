@@ -39,7 +39,7 @@ public class OperandRoman extends AbstractOperand {
                     break;
                 }
             }
-        }else {
+        } else {
             throw new IllegalStateException("Не получилось вставить значение как строку " + number);
         }
     }
@@ -61,7 +61,7 @@ public class OperandRoman extends AbstractOperand {
         return RomanSerializer.toString(integer);
     }
 
-    private void checkMin(int number){
+    private void checkMin(int number) {
         if (number < 1) {
             throw new IllegalArgumentException("Число в системе " + getType() + " не должно быть меньше 1");
         }

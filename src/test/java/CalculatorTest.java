@@ -2,6 +2,7 @@ import exceptions.DifferentTypeOfReckoningException;
 import exceptions.InvalidOperationFormatException;
 import math.ICalculator;
 import math.IOperand;
+import math.operands.OperandArabic;
 import math.operands.OperandRoman;
 import org.junit.jupiter.api.Test;
 
@@ -140,6 +141,39 @@ class CalculatorTest {
             fail();
         }
 
+    }
+    @Test
+    void calcMinus1plus1ThrowException() {
+        try {
+            calculator.calc("-1+1");
+        } catch (Exception e) {
+            assertTrue(true);
+        }
+    }
+    @Test
+    void calc1plus11ThrowException() {
+        try {
+            calculator.calc("1+11");
+        } catch (Exception e) {
+            assertTrue(true);
+        }
+    }
+    @Test
+    void plusArabicNotThrowExceptions() {
+        customOperatorTest(new OperandArabic(), "+");
+    }
+    @Test
+    void minusArabicNotThrowExceptions() {
+        customOperatorTest(new OperandArabic(), "-");
+    }
+
+    @Test
+    void multiplyArabicNotThrowExceptions() {
+        customOperatorTest(new OperandArabic(), "*");
+    }
+    @Test
+    void divideArabicNotThrowExceptions() {
+        customOperatorTest(new OperandArabic(), "/");
     }
 
     private void log(String message) {

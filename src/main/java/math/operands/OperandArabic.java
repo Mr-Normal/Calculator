@@ -4,6 +4,11 @@ import java.text.ParseException;
 
 public class OperandArabic extends AbstractOperand {
     private int number;
+    private static final String[] validInputs =
+            new String[]{"1", "2", "3", "4", "5", "6", "7", "8", "9", "10"};
+
+    public OperandArabic() {
+    }
 
     public OperandArabic(String parsableString) throws ParseException {
         super(parsableString);
@@ -16,17 +21,12 @@ public class OperandArabic extends AbstractOperand {
 
     @Override
     public boolean isParsable(String number) {
-        try {
-            if (number.length() != 1) {
-                return false;
-            }
-            if (Integer.parseInt(number) != 0) {
+        for (String validStr : validInputs) {
+            if (number.equalsIgnoreCase(validStr)) {
                 return true;
             }
-            return number.equals("0");
-        } catch (Exception e) {
-            return false;
         }
+        return false;
     }
 
     @Override

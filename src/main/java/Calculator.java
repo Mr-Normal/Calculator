@@ -1,17 +1,15 @@
 import exceptions.DifferentTypeOfReckoningException;
 import exceptions.InvalidOperationFormatException;
-import math.ICalculator;
 import math.IOperand;
 import math.IOperator;
 import math.MathFactory;
 
 import java.util.ArrayList;
 
-public class Calculator implements ICalculator {
+class Calculator {
     private final MathFactory mathFactory = new MathFactory();
 
-    @Override
-    public String calc(String input) throws
+    String calc(String input) throws
             DifferentTypeOfReckoningException,
             InvalidOperationFormatException {
         return calcPure(input.replaceAll(" ", ""));

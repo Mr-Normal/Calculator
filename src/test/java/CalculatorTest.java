@@ -1,6 +1,5 @@
 import exceptions.DifferentTypeOfReckoningException;
 import exceptions.InvalidOperationFormatException;
-import math.ICalculator;
 import math.IOperand;
 import math.operands.OperandArabic;
 import math.operands.OperandRoman;
@@ -9,7 +8,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CalculatorTest {
-    private final ICalculator calculator = new Calculator();
+    private final Calculator calculator = new Calculator();
 
     @Test
     void calc1Plus2IsEqual3() {
